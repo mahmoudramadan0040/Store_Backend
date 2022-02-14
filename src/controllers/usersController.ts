@@ -84,7 +84,7 @@ class UserController {
             console.log(user_auth)
             const token = Jwt.sign({user_auth},configration.token_secret as string )
             console.log(token)
-            if(user_auth ==null){
+            if(user_auth == null){
                 return res.status(401).json({
                     status:"error failed login ",
                     message:'the user and password not correct please typ agiain'

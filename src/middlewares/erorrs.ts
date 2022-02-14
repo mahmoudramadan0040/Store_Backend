@@ -1,5 +1,5 @@
 import { Response,Request,NextFunction } from "express";
-interface Error {
+export interface Error {
     name?:string,
     stack?:string,
     message?:string,

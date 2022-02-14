@@ -5,7 +5,6 @@ import db from '../database/index';
 import { Sql } from "../models/users";
 class Encryption{
     async hashPassword(password:string):Promise<string>{
-
         const salt = parseInt(configration.salt as string)
         console.log(salt)
         const result =bcrypt.hashSync(`${password}${configration.pepper}`,salt);
