@@ -1,7 +1,7 @@
 import { Pool } from "pg";
 import configration from '../config/configration';
 
-console.log(configration);
+// console.log(configration);
 
 const pool =new Pool({
     host:configration.db_host,

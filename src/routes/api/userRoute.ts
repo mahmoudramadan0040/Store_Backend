@@ -5,6 +5,7 @@ const routes =Router();
 const user = new UserController();
 // create user
 routes.post('/', user.create);
+routes.post('/auth', user.authentication);
 // get all user
 routes.get('/',user.index);
 // get one user

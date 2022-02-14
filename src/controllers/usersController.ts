@@ -1,5 +1,9 @@
 import { Request,Response,NextFunction } from "express";
 import ModelUser from '../models/users';
+import Encryption from "../security/encryption_auth";
+import Jwt from 'jsonwebtoken'
+import configration from "../config/configration";
+import { nextTick } from "process";
 
 const user = new ModelUser();
 
@@ -67,6 +71,33 @@ class UserController {
             })
         }catch(error){
             next(error)
+        }
+    }
+    async authentication (req:Request,res:Response,next:NextFunction){
+        try{
+            const email =req.body.email;
+            console.log(email);
+            const password =req.body.password;
+            console.log(password);
+            const auth = new Encryption()
+            const user_auth = await auth.auth(email,password); 
+            console.log(user_auth)
+            const token = Jwt.sign({user_auth},configration.token_secret as string )
+            console.log(token)
+            if(user_auth ==null){
+                return res.status(401).json({
+                    status:"error failed login ",
+                    message:'the user and password not correct please typ agiain'
+                });
+            }else {
+                return res.json({
+                    status:'success',
+                    data:{...user_auth,token},
+                    message:"user authed success"
+                })
+            }
+        }catch(error){
+            return next(error);
         }
     }
     
