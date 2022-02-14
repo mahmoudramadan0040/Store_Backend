@@ -7,7 +7,7 @@ enum Sql{
     all_user=`select * from users returning username,firstname,email,password;`,
     one_user=`select username,firstname,lastname,email from users where id=$1;`
 }
-class userModel{
+export default class ModelUser{
     async createUser(user:User):Promise<User>{
         try{ 
             const conn = await db.connect()
