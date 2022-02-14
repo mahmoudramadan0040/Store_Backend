@@ -2,22 +2,28 @@
 import User from '../interfaces/user';
 import db from '../database/index'
 enum Sql{ 
-    createUser =`insert into users(username,firstname,lastname,email,password) 
-    values ($1,$2,$3,$4,$5) returning username,firstname,lasrname,email,password,id;`,
-    all_user=`select * from users returning username,firstname,email,password;`,
-    one_user=`select username,firstname,lastname,email from users where id=$1;`
+    createUser =`INSERT INTO users(username,firstname,lastname,email,password) values ($1,$2,$3,$4,$5) 
+    returning id,username,firstname,lastname,email;`,
+    all_user=`select * from users ;`,
+    one_user=`select username,firstname,lastname,email from users where id=$1;`,
+    update_user=`update users set username=$1,firstname=$2,lastname=$3,email=$4,password=$5 where id=$6
+    returning id,username,firstname,lastname,email`,
+    delete_user=`delete from users where id=$1
+    returning id,username,firstname,lastname,email`
 }
 export default class ModelUser{
     async createUser(user:User):Promise<User>{
         try{ 
-            const conn = await db.connect()
-            const result =await  conn.query(Sql.createUser,[
+            
+            const conn = await db.connect();
+            const result =await conn.query(Sql.createUser ,[
                 user.username,
                 user.firstname,
                 user.lastname,
                 user.email,
                 user.password
             ]);
+            
             conn.release();
             return result.rows[0];
 
@@ -28,7 +34,7 @@ export default class ModelUser{
     async getOne_user(id:string):Promise<User>{
         try{
             const conn =await db.connect();
-            const result =await conn.query(Sql.one_user);
+            const result =await conn.query(Sql.one_user,[id]);
             conn.release();
             return result.rows[0];
         }catch(error){
@@ -45,6 +51,32 @@ export default class ModelUser{
         }catch(error)
         {
             throw new Error("unable to show all users");
+        }
+    }
+    async update_user(user:User):Promise<User>{
+        try{
+            const conn =await db.connect();
+            const reuslt =await conn.query(Sql.update_user,[
+                user.username,
+                user.firstname,
+                user.lastname,
+                user.email,
+                user.password
+            ]);
+            conn.release();
+            return reuslt.rows[0];
+        }catch(erro){
+            throw new Error("unable to update users");
+        }
+    }
+    async delete_user(id:string):Promise<User>{
+        try{
+            const conn =await db.connect();
+            const reuslt =await conn.query(Sql.delete_user,[id]);
+            conn.release();
+            return reuslt.rows[0];
+        }catch(erro){
+            throw new Error("cannot delete user");
         }
     }
     

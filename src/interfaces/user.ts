@@ -1,5 +1,5 @@
 interface User{
-    id:string,
+    id?:string,
     firstname:string,
     username:string,
     lastname:string,

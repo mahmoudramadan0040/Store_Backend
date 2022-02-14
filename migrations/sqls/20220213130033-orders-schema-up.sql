@@ -1,9 +1,9 @@
 /* Replace with your SQL commands */
-
+create Extension if not exists "uuid-ossp";
 create table orders (
-    id serial primary key,
-    product_id integer not null,
-    user_id integer not null,
+    id uuid default uuid_generate_v4() primary key,
+    product_id uuid default uuid_generate_v4() not null,
+    user_id uuid default uuid_generate_v4() not null,
     quantity integer not null,
     status varchar(50) not null,
     FOREIGN key (product_id) references product(id) on delete cascade,
