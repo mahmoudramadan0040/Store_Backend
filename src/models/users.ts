@@ -67,7 +67,8 @@ export default class ModelUser{
                 user.firstname,
                 user.lastname,
                 user.email,
-                await encryption.hashPassword(user.password)
+                await encryption.hashPassword(user.password),
+                user.id
             ]);
             conn.release();
             return reuslt.rows[0];

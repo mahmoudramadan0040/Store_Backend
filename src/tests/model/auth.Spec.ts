@@ -2,8 +2,8 @@ import ModelUser from '../../models/users';
 import Encryption from '../../security/encryption_auth';
 import User from '../../interfaces/user';
 import db from '../../database/index';
-import config from '../../config/configration';
-console.log(config);
+
+
 const user =new ModelUser();
 const encryption = new Encryption();
 
@@ -25,15 +25,14 @@ describe('Authentication Users',()=>{
         beforeAll(async()=>{
             
             const created_User = await user.createUser(test_user);
-            console.log("created usssssss",created_User)
+            
             test_user.id = created_User.id;
             
         })
         
         it("Test the auth mehtod retun the authed user",async()=>{
             const auth_user = await encryption.auth(test_user.email ,test_user.password )
-            console.log("autheduser",auth_user)
-            
+
             expect(auth_user?.username).toBe('mahmoud0020');
             expect(auth_user?.firstname).toBe('mahmoud');
             expect(auth_user?.lastname).toBe('ramadan');
