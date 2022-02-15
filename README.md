@@ -52,15 +52,15 @@ The database schema and and API route information can be found in the REQUIREMEN
 
 
 ### Setup Database
-*connect to default postgres databse as server root user 
+* connect to default postgres databse as server root user 
 > psql -U postgres
-*in psql run this to create user 
+* in psql run this to create user 
 > CREATE USER postgress WITH PASSWORD 'moon'
-*in psql run the following 
+* in psql run the following 
 > CREATE DATABASE Store_dev
 > CREATE DATABASE Store_test
 
-*connect to the database and grant all privileges
+* connect to the database and grant all privileges
 ### grant for Store_dev
  > \c Store_dev
  > GRANT ALL PREVILEGES ON DATABASE Store_dev TO mahmoud;
