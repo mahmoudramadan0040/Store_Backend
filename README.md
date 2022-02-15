@@ -34,20 +34,27 @@ The database schema and and API route information can be found in the REQUIREMEN
   > npm i typescript
 ### express
  > npm i express 
+###
  > npm i --save-dev @types/express
 ### db-migrate
  > npm i -g db-migrate
+ ###
  > npm i -g db-migrate-pg
+ ###
  > npm i pg
+ ###
  > npm i -save-dev @types/pg
 ### jsonwebtoken
  > npm i jsonwebtoken
+ ###
  > npm i --save-dev @types/jsonwebtoken
 ### morgan 
 > npm i morgan
+###
 > npm i --save-dev morgan
 ### jasmine 
 > npm i jasmine 
+###
 > npm i --save-dev @types/jasmine
 
 
@@ -58,11 +65,13 @@ The database schema and and API route information can be found in the REQUIREMEN
 > CREATE USER postgress WITH PASSWORD 'moon'
 * in psql run the following 
 > CREATE DATABASE Store_dev;
+###
 > CREATE DATABASE Store_test;
-
+###
 * connect to the database and grant all privileges
 ### grant for Store_dev
  > \c Store_dev
+ ###
  > GRANT ALL PREVILEGES ON DATABASE Store_dev TO mahmoud;
 ### grant for Store_test
  > \c Store_test
