@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write 'src/**/*.ts'",
-    "test": "npm run build && jasmine"
+    "test": "SET NODE_ENVIRONMENT='test' && db-migrate up --env test && tsc & jasmine && db-migrate reset"
   },
   "repository": {
     "type": "git",

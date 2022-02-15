@@ -28,6 +28,7 @@ class Encryption{
             conn.release()
             return null ;
         }catch(error){
+            return null ;
             throw new Error("user can not be autherized")
         }
     }
