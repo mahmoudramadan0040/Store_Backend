@@ -57,8 +57,8 @@ The database schema and and API route information can be found in the REQUIREMEN
 * in psql run this to create user 
 > CREATE USER postgress WITH PASSWORD 'moon'
 * in psql run the following 
-> CREATE DATABASE Store_dev
-> CREATE DATABASE Store_test
+> CREATE DATABASE Store_dev;
+> CREATE DATABASE Store_test;
 
 * connect to the database and grant all privileges
 ### grant for Store_dev
@@ -66,7 +66,7 @@ The database schema and and API route information can be found in the REQUIREMEN
  > GRANT ALL PREVILEGES ON DATABASE Store_dev TO mahmoud;
 ### grant for Store_test
  > \c Store_test
- > GRANT ALL PREVILEGES ON DATABASE Store_test TO mahmoud;
+>GRANT ALL PREVILEGES ON DATABASE Store_test TO mahmoud;
 
 ## setup and run 
 #### server port
