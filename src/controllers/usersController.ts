@@ -3,7 +3,6 @@ import ModelUser from '../models/users';
 import Encryption from "../security/encryption_auth";
 import Jwt from 'jsonwebtoken'
 import configration from "../config/configration";
-import { nextTick } from "process";
 
 const user = new ModelUser();
 
@@ -11,7 +10,7 @@ class UserController {
     async create(req:Request,res:Response,next:NextFunction){
         try{
             const result = await user.createUser(req.body);
-            console.log(result);
+            
             res.json({
                 status:"sucess",
                 data:{...result},
