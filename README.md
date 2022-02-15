@@ -65,7 +65,7 @@ The database schema and and API route information can be found in the REQUIREMEN
  > \c Store_dev
  > GRANT ALL PREVILEGES ON DATABASE Store_dev TO mahmoud;
 ### grant for Store_test
- > \c Store_test
+ > \c Store_test \n
 >GRANT ALL PREVILEGES ON DATABASE Store_test TO mahmoud;
 
 ## setup and run 
