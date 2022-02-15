@@ -39,6 +39,8 @@
 > npm run dev
 
 ## ENV varaibles
+
+```
 PORT =3000
 POSTGRESS_PORT=5432
 POSTGRESS_DB=Store_dev
@@ -53,4 +55,4 @@ BYCRPTE_PASS = 123pass
 
 SALT_ROUNDS =10
 TOKEN_SECRET ="first_token"
-
+```
