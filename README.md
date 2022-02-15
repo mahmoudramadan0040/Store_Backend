@@ -29,10 +29,10 @@ The database schema and and API route information can be found in the REQUIREMEN
   > http://localhost:3000/api/order/:id
   #### POST create order 
   > http://localhost:3000/api/product/
-##pakages 
-###typescript
+## pakages 
+### typescript
   > npm i typescript
-###express
+### express
  > npm i express 
  > npm i --save-dev @types/express
 ### db-migrate
@@ -40,13 +40,13 @@ The database schema and and API route information can be found in the REQUIREMEN
  > npm i -g db-migrate-pg
  > npm i pg
  > npm i -save-dev @types/pg
-###jsonwebtoken
+### jsonwebtoken
  > npm i jsonwebtoken
  > npm i --save-dev @types/jsonwebtoken
-###morgan 
+### morgan 
 > npm i morgan
 > npm i --save-dev morgan
-###jasmine 
+### jasmine 
 > npm i jasmine 
 > npm i --save-dev @types/jasmine
 
