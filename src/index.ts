@@ -11,6 +11,9 @@ const app = express();
 const port = configration.port || 3000;
 app.use(morgan('common'));
 app.use(express.json());
+app.get("/",(req:express.Request,res:express.Response,next:express.NextFunction)=>{
+     res.send("hello world");
+})
 app.use('/api',routes);
 // error handler middleware 
 const err =new ErrMiddleware();
