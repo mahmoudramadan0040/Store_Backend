@@ -62,7 +62,7 @@ The database schema and and API route information can be found in the REQUIREMEN
 * connect to default postgres databse as server root user 
 > psql -U postgres
 * in psql run this to create user 
-> CREATE USER postgress WITH PASSWORD 'moon'
+> CREATE USER mahmoud WITH PASSWORD 'moon'
 * in psql run the following 
 > CREATE DATABASE Store_dev;
 ###
@@ -87,7 +87,8 @@ The database schema and and API route information can be found in the REQUIREMEN
  > npm run build
 #### devolopment
 > npm run dev
-
+## test run
+> npm run test
 ## ENV varaibles
 
 ```
@@ -95,7 +96,7 @@ PORT =3000
 POSTGRESS_PORT=5432
 POSTGRESS_DB=Store_dev
 POSTGRESS_DB_TEST=Store_test
-POSTGRESS_USER=postgres
+POSTGRESS_USER=mahmoud
 POSTGRESS_PASSWORD=moon
 POSTGRESS_HOST=localhost
 
