@@ -4,7 +4,7 @@ import orderController from "../../controllers/orderController";
 const routes =Router();
 
 const order =new orderController();
-routes.post('/',auth_valid, order.create);
+routes.post('/', order.create);
 routes.get('/:id',auth_valid,order.getCurrentOreder);
 
 

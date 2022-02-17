@@ -1,8 +1,18 @@
 interface Order{
-    id:string,
-    product_id:string,
+    id?:string,
     user_id:string,
-    quantity:number,
     status:string
 }
+export interface ProductOrder {
+    product_id:string,
+    quantity:number,
+}
+
+export interface orderBase{
+    id?:string,
+    products:ProductOrder,
+    order:Order
+}
+
 export default Order;
+

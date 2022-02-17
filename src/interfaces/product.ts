@@ -1,7 +1,7 @@
 interface Product {
-    id:string,
+    id?:string,
     prod_name:string,
-    price:string,
+    price:number,
     category:string
 }
 export default Product;

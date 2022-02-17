@@ -52,7 +52,7 @@ describe('TEST USERS Model',()=>{
         })
         it("Get all user in db",async()=>{
             const all_user =await user.getMany_user();
-            expect(all_user.length).toBe(2);
+            expect(all_user.length).toBe(3);
         })
         it("Get one user function",async()=>{
             const oneUser= await user.getOne_user(test_user.id as string)
