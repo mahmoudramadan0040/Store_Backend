@@ -78,7 +78,8 @@ The database schema and and API route information can be found in the REQUIREMEN
  ###
  > GRANT ALL PREVILEGES ON DATABASE Store_test TO mahmoud;
 ## database schema
-![Db_schema](https://user-images.githubusercontent.com/95087747/154109478-de425173-def7-4259-8c8f-380fc52108bd.PNG)
+![Db_shema_2](https://user-images.githubusercontent.com/95087747/154383729-23744a5f-7f15-4f25-91b2-b7f59e66571f.PNG)
+
 
 ## setup and run 
 #### server port
