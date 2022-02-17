@@ -2,10 +2,10 @@ import Product from '../interfaces/product';
 import db from '../database/index';
 
 export enum SqlProduct{
-    one_product ='select prod_name,price,category from product where id =$1 ;',
+    one_product ='select prod_name,price,category,id from product where id =$1 ;',
     all_products ='select * from product;',
     create_product ='insert into product(prod_name,price,category) values($1,$2,$3) returning id,prod_name,price,category;',
-    delete_product ='delete from product where id=$1;'
+    delete_product ='delete from product where id=$1 returning id;'
 }
 
 export default class ModelProduct{
