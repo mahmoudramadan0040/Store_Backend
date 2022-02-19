@@ -90,7 +90,7 @@ describe("Test User EndPoint",()=>{
             .set('Authorization',`Bearer ${token}` )
                 
             expect(res.status).toBe(200)
-            expect(res.body.data.length).toBe(3)
+            expect(res.body.data.length).toBe(4)
         })
 
         it("update  one user ", async ()=>{
