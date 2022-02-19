@@ -7,7 +7,7 @@ const user = new UserController();
 routes.post('/',user.create);
 routes.post('/auth', user.authentication);
 // get all user
-routes.get('/',user.index);
+routes.get('/',auth_valid,user.index);
 // get one user
 routes.get('/:id',auth_valid,user.show);
 //delete one user

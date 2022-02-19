@@ -46,7 +46,12 @@ describe('TEST USERS Model',()=>{
         it('create user action method',async()=>{
             const created_User =await user.createUser(test_user_2);
             expect(created_User).toEqual({
-                id:created_User.id,username:"mahmoud0030",firstname:"mahmoud",lastname:"ramadan",email:"666@gmail.com",password:created_User.password
+                id:created_User.id,
+                username:"mahmoud0030"
+                ,firstname:"mahmoud",
+                lastname:"ramadan",
+                email:"666@gmail.com",
+                password:created_User.password
             }as User);
 
         })

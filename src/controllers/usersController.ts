@@ -24,7 +24,7 @@ class UserController {
     async show(req:Request,res:Response,next:NextFunction){
         try{
             const result =await user.getOne_user(req.params.id as string );
-            console.log("hello",result);
+            
 
             res.json({
                 status:"success",
@@ -75,14 +75,14 @@ class UserController {
     async authentication (req:Request,res:Response,next:NextFunction){
         try{
             const email =req.body.email;
-            console.log(email);
+            
             const password =req.body.password;
-            console.log(password);
+            
             const auth = new Encryption()
             const user_auth = await auth.auth(email,password); 
-            console.log(user_auth)
+            
             const token = Jwt.sign({user_auth},configration.token_secret as string )
-            console.log(token)
+            
             if(user_auth == null){
                 return res.status(401).json({
                     status:"error failed login ",

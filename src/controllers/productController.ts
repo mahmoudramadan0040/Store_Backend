@@ -46,7 +46,7 @@ class ProductController{
             res.json({
                 status:"success",
                 data:{...reuslt},
-                "message":"one product"
+                "message":"delete  product"
             })
         }catch(err){
             next(err);
