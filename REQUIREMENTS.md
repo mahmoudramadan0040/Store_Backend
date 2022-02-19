@@ -21,23 +21,68 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 ## Data Shapes
 #### Product
--  id uuid
-- name string
-- price number
-- category 
+-  id --> uuid
+-  name --> string
+-  price -->number
+-  category -->string
 
 #### User
 - id -> uuid
-- firstName string
-- lastName string
-- password string
-- lastname string
-- email string
-
+- firstName -->string
+- lastName -->string
+- password -->string
+- lastname -->string
+- email -->string
 #### Orders
 - id uuid
-- prod_id uuid
-- quantity number
-- user_id uuid
-- status string
+- user_id -->uuid
+- status -->string
+#### order_product
+- quantity -->number
+- product_id -->uuid
+- order_id --> uuid
 
+
+## create users table  
+'create extension if not exists "uuid-ossp";
+ create table users (
+     id uuid default uuid_generate_v4() primary key,
+     username varchar(50) not null,
+     firstname varchar(50) not null,
+     lastname varchar(50) not null,
+     email varchar(50) not null unique,
+     password varchar(255) not null 
+ );'
+
+## create product table 
+' create extension if not exists "uuid-ossp";
+create table product(
+    id uuid default uuid_generate_v4() primary key,
+    prod_name varchar(50) not null,
+    price integer not null ,
+    category varchar(50) not null
+);'
+## create orders table
+
+'create table orders (
+    id uuid default uuid_generate_v4() primary key,
+    -- product_id uuid default uuid_generate_v4() not null,
+    user_id uuid default uuid_generate_v4() not null,
+    -- quantity integer not null,
+    status varchar(50) not null,
+    -- FOREIGN key (product_id) references product(id) on delete cascade,
+    FOREIGN key (user_id) references users(id) on delete cascade
+    
+);'
+## create order_product table 
+
+
+'create table order_product(
+    id uuid default uuid_generate_v4() primary key,
+    order_id uuid default uuid_generate_v4() ,
+    product_id uuid default uuid_generate_v4(),
+    quantity integer not null,
+    FOREIGN key (order_id) references orders(id) on delete cascade,
+    FOREIGN key (product_id) references product(id) on delete cascade
+);
+'
