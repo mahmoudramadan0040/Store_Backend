@@ -1,5 +1,5 @@
 # Store_Backend
-The database schema and and API route information can be found in the REQUIREMENT.md
+The database schema and information can be found in the REQUIREMENT.md
 ## EndPoints
 ### userEndPoint
   #### GET all user
