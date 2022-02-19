@@ -1,5 +1,5 @@
 # Store_Backend
-The database schema and and API route information can be found in the REQUIREMENT.md
+The database schema and information can be found in the REQUIREMENT.md
 ## EndPoints
 ### userEndPoint
   #### GET all user
@@ -108,4 +108,22 @@ BYCRPTE_PASS = 123pass
 SALT_ROUNDS =10
 TOKEN_SECRET ="first_token"
 ```
+
+
+## Test result 
+![Capture_1](https://user-images.githubusercontent.com/95087747/154823079-d8b92c67-3b2d-4e4c-b12f-bc752a099d59.PNG)
+![Capture_2](https://user-images.githubusercontent.com/95087747/154823090-733c871a-39ac-43de-8c99-2d8c6ba40238.PNG)
+![Capture_3](https://user-images.githubusercontent.com/95087747/154823091-bb5b6562-b450-4f8d-9d67-458d5be12978.PNG)
+![Capture_4](https://user-images.githubusercontent.com/95087747/154823092-021b4701-285b-4be7-984b-70b97b8f1e6a.PNG)
+
+
+
+
+
+
+
+
+
+
+
 

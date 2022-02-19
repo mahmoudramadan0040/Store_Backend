@@ -44,7 +44,8 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 
 ## create users table  
-'create extension if not exists "uuid-ossp";
+```
+create extension if not exists "uuid-ossp";
  create table users (
      id uuid default uuid_generate_v4() primary key,
      username varchar(50) not null,
@@ -52,19 +53,23 @@ These are the notes from a meeting with the frontend developer that describe wha
      lastname varchar(50) not null,
      email varchar(50) not null unique,
      password varchar(255) not null 
- );'
+ );
+ ```
 
 ## create product table 
-' create extension if not exists "uuid-ossp";
+```
+create extension if not exists "uuid-ossp";
 create table product(
     id uuid default uuid_generate_v4() primary key,
     prod_name varchar(50) not null,
     price integer not null ,
     category varchar(50) not null
-);'
+);
+```
 ## create orders table
 
-'create table orders (
+```
+create table orders (
     id uuid default uuid_generate_v4() primary key,
     -- product_id uuid default uuid_generate_v4() not null,
     user_id uuid default uuid_generate_v4() not null,
@@ -73,11 +78,13 @@ create table product(
     -- FOREIGN key (product_id) references product(id) on delete cascade,
     FOREIGN key (user_id) references users(id) on delete cascade
     
-);'
+);
+```
 ## create order_product table 
 
 
-'create table order_product(
+```
+create table order_product(
     id uuid default uuid_generate_v4() primary key,
     order_id uuid default uuid_generate_v4() ,
     product_id uuid default uuid_generate_v4(),
@@ -85,4 +92,4 @@ create table product(
     FOREIGN key (order_id) references orders(id) on delete cascade,
     FOREIGN key (product_id) references product(id) on delete cascade
 );
-'
+```
