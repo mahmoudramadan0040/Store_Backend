@@ -7,7 +7,7 @@ import Product from "../../interfaces/product";
 import { orderBase } from "../../interfaces/order";
 const user = new ModelUser();
 const prod =new ModelProduct();
-describe("TEST Product Model",()=>{
+describe("TEST Order Model",()=>{
     const orders = new ModelOrder();
     describe("Test all orders be defined",()=>{
         it("create product  method defined",()=>{

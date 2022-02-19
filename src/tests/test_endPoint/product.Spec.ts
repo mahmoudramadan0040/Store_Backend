@@ -11,7 +11,7 @@ const req = supertest(app);
 const product = new ModelProduct();
 const user = new ModelUser();
 let token ='';
-describe("Test User EndPoint",()=>{
+describe("Test Product EndPoint",()=>{
     token = '';
     const test_product = {
         prod_name:"computer",

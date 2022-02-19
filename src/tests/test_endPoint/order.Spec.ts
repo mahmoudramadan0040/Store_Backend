@@ -12,7 +12,7 @@ const req = supertest(app);
 const product = new ModelProduct();
 const user = new ModelUser();
 let token ='';
-describe("Test User EndPoint",()=>{
+describe("Test Order EndPoint",()=>{
     token = '';
     const test_product = {
         prod_name:"computer",
@@ -91,8 +91,3 @@ describe("Test User EndPoint",()=>{
     })
 })
 
-// it("Test currentOrder function ",async()=>{
-//     const currentOrder = await orders.currentOrder(user_id as string)
-//     expect(currentOrder.status).toEqual(order_test.order.status)
-//     expect(currentOrder.user_id).toEqual(order_test.order.user_id)
-// })
